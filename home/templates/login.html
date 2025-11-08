@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<section class="flex justify-center items-center min-h-screen bg-gradient-to-r from-red-50 to-yellow-50 pt-24">
+  <div class="bg-white shadow-xl rounded-2xl p-8 w-full max-w-md">
+
+    <h2 class="text-3xl font-bold text-center text-red-500 mb-6">Welcome Back</h2>
+
+    <!-- Django Messages -->
+    {% if messages %}
+      <div class="mb-4">
+        {% for message in messages %}
+          <div class="p-3 text-center rounded-lg {% if message.tags == 'error' %}bg-red-100 text-red-700{% else %}bg-green-100 text-green-700{% endif %}">
+            {{ message }}
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    <form method="POST" class="space-y-5">
+      {% csrf_token %}
+
+      <!-- Email -->
+      <div>
+        <label for="email" class="block text-gray-700 font-semibold mb-1">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email"
+               class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-400 outline-none"
+               required>
+      </div>
+
+      <!-- Password -->
+      <div>
+        <label for="password" class="block text-gray-700 font-semibold mb-1">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password"
+               class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-400 outline-none"
+               required>
+      </div>
+
+      <button type="submit"
+              class="w-full bg-red-500 text-white py-3 rounded-lg font-semibold hover:bg-red-600 transition">
+        Login
+      </button>
+    </form>
+
+    <p class="text-center text-gray-600 mt-5">
+      Don’t have an account?
+      <a href="{% url 'register' %}" class="text-red-500 hover:underline font-semibold">Sign Up</a>
+    </p>
+  </div>
+</section>
+
+{% endblock %}

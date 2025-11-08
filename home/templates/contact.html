@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<section class="pt-28 pb-20 bg-gradient-to-r from-red-50 to-yellow-50">
+  <div class="max-w-5xl mx-auto px-6 text-center">
+    <h1 class="text-5xl font-bold text-gray-900 mb-6">
+      Contact <span class="text-red-500">Us</span>
+    </h1>
+    <p class="text-gray-600 text-lg mb-12">
+      Have questions, feedback, or special requests?  
+      We’d love to hear from you. Fill out the form below and we’ll get back to you soon.
+    </p>
+
+    <div class="bg-white shadow-lg rounded-2xl p-8 max-w-2xl mx-auto">
+      <form method="POST" class="space-y-6">
+        {% csrf_token %}
+        <div>
+          <label for="name" class="block text-gray-700 font-semibold mb-1">Your Name</label>
+          <input type="text" id="name" name="name" placeholder="Enter your name"
+                 class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-400 outline-none"
+                 required>
+        </div>
+
+        <div>
+          <label for="email" class="block text-gray-700 font-semibold mb-1">Your Email</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email"
+                 class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-400 outline-none"
+                 required>
+        </div>
+
+        <div>
+          <label for="message" class="block text-gray-700 font-semibold mb-1">Message</label>
+          <textarea id="message" name="message" rows="4" placeholder="Type your message here..."
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-400 outline-none"
+                    required></textarea>
+        </div>
+
+        <button type="submit"
+                class="w-full bg-red-500 text-white py-3 rounded-lg font-semibold hover:bg-red-600 transition">
+          Send Message
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Contact Info -->
+  <div class="max-w-5xl mx-auto mt-16 px-6 grid md:grid-cols-3 gap-8 text-center">
+    <div class="bg-white shadow-md rounded-xl p-6">
+      <h3 class="text-xl font-semibold text-red-500 mb-2">📍 Address</h3>
+      <p class="text-gray-600">New Delhi, India</p>
+    </div>
+    <div class="bg-white shadow-md rounded-xl p-6">
+      <h3 class="text-xl font-semibold text-red-500 mb-2">📞 Phone</h3>
+      <p class="text-gray-600">+91 9876543210</p>
+    </div>
+    <div class="bg-white shadow-md rounded-xl p-6">
+      <h3 class="text-xl font-semibold text-red-500 mb-2">✉️ Email</h3>
+      <p class="text-gray-600">support@foodorder.com</p>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

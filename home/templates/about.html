@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<section class="pt-28 pb-20 bg-gradient-to-r from-red-50 to-yellow-50">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    <h1 class="text-5xl font-bold text-gray-900 mb-6">
+      About <span class="text-red-500">FoodOrder</span>
+    </h1>
+    <p class="text-gray-600 text-lg max-w-3xl mx-auto">
+      At <strong>FoodOrder</strong>, we believe that great food brings people together.  
+      Our mission is to make delicious, high-quality meals accessible to everyone, anytime and anywhere.  
+      Whether you’re craving a cheesy pizza, a juicy burger, or a healthy salad — we deliver happiness to your doorstep. 🍔🍕🥗
+    </p>
+  </div>
+
+  <div class="max-w-6xl mx-auto px-6 mt-16 grid md:grid-cols-2 gap-10 items-center">
+    <img src="https://cdn.pixabay.com/photo/2016/03/05/22/07/chef-1239335_1280.jpg"
+         alt="Our Team" class="rounded-2xl shadow-xl">
+    <div class="space-y-4">
+      <h2 class="text-3xl font-bold text-gray-800">Why Choose Us?</h2>
+      <ul class="text-gray-600 text-lg list-disc pl-5 space-y-2">
+        <li>Fast and reliable delivery — fresh food always on time.</li>
+        <li>Carefully curated menu with premium ingredients.</li>
+        <li>Friendly service and 24/7 customer support.</li>
+        <li>Hygienic packaging and eco-friendly delivery.</li>
+      </ul>
+      <p class="text-gray-600">
+        Our chefs and team are dedicated to crafting every meal with care and passion.  
+        Join thousands of satisfied customers and taste the difference!
+      </p>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
